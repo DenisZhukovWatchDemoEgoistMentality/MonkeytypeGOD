@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "MonkeyType God 2026",
+    "version": "10.0",
+    "description": "MonkeyType domination",
+    "permissions": ["storage", "activeTab"],
+    "host_permissions": ["*://monkeytype.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://monkeytype.com/*"],
+        "js": ["monkeytype.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "commands": {
+      "mode_god": {
+        "suggested_key": {"default": "Alt+1"},
+        "description": "GOD mode"
+      },
+      "mode_nine": {
+        "suggested_key": {"default": "Alt+2"},
+        "description": "999+ mode"
+      },
+      "mode_human": {
+        "suggested_key": {"default": "Alt+3"},
+        "description": "HUMAN mode"
+      },
+      "mode_custom": {
+        "suggested_key": {"default": "Alt+4"},
+        "description": "CUSTOM mode"
+      }
+    }
+  }
